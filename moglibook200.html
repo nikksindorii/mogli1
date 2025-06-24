@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MogliBook - Premium Stationery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-book-open"></i>
+            <h1>MogliBook</h1>
+        </div>
+        
+        <div class="search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" placeholder="Search products...">
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="hero">
+        <h2>Premium Stationery for Creative Minds</h2>
+        <p>Discover our exquisite collection of high-quality stationery items that inspire creativity and make everyday writing a pleasure.</p>
+        <a href="#products" class="btn">Shop Now</a>
+    </section>
+    
+    <div class="container" id="products">
+        <h2 class="section-title">Our Products</h2>
+        
+        <div class="filter-controls">
+            <div class="filter-group">
+                <span class="filter-label">Filter by:</span>
+                <select class="filter-select" id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="Writing">Writing</option>
+                    <option value="Correction">Correction</option>
+                    <option value="Accessory">Accessory</option>
+                    <option value="Art">Art</option>
+                    <option value="Paper">Paper</option>
+                    <option value="Bag">Bag</option>
+                    <option value="Math">Math</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <span class="filter-label">Sort by:</span>
+                <select class="filter-select" id="sortBy">
+                    <option value="name-asc">Name (A-Z)</option>
+                    <option value="name-desc">Name (Z-A)</option>
+                    <option value="price-asc">Price (Low to High)</option>
+                    <option value="price-desc">Price (High to Low)</option>
+                </select>
+            </div>
+        </div>
+        
+        <div class="products-grid" id="productsGrid">
+            <!-- Product cards will be generated here by JavaScript -->
+        </div>
+        <!-- 👇 This is where pagination buttons will appear -->
+      <div id="pagination" class="pagination"></div> 
+
+          <!-- ✅ SERVICES SECTION HERE -->
+      <section id="services" class="services-section">
+  <h2>Our Services</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <i class="fas fa-truck"></i>
+      <h3>Home Delivery</h3>
+      <p>Get your stationery delivered quickly and safely at your doorstep.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-box-open"></i>
+      <h3>Wholesale Orders</h3>
+      <p>We offer bulk supply solutions for schools, institutions, and businesses.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-shopping-bag"></i>
+      <h3>Retail Orders</h3>
+      <p>Buy any item individually at affordable prices — no minimum quantity needed.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-tags"></i>
+      <h3>Less Than Market Price</h3>
+      <p>Enjoy premium stationery at prices lower than traditional market rates.</p>
+    </div>
+    <div class="service-card">
+      <i class="fas fa-check-circle"></i>
+      <h3>Good Quality Products</h3>
+      <p>We ensure only high-quality materials that provide long-lasting performance.</p>
+    </div>
+  </div>
+</section>
+
+     
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>MogliBook</h3>
+                <p>Premium stationery for creative minds. Quality products that inspire.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="#">Writing</a></li>
+                    <li><a href="#">Drawing</a></li>
+                    <li><a href="#">School Supplies</a></li>
+                    <li><a href="#">Office Supplies</a></li>
+                    <li><a href="#">Art Materials</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> E-9, Kanha Park, Rau, Indore, MadhyaPradesh</li>
+                    <li><i class="fas fa-phone"></i> 9229828833</li>
+                    <li><i class="fas fa-envelope"></i> moglibook@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 MogliBook. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Complete product data with all 200 items
+        const products = [
+            {id: 1, name: "HB Pencil #1", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt", image: "images/pencil_img.jpg"},
+            {id: 2, name: "Eraser #1", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 3, name: "Sharpener #1", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 4, name: "12-Color Crayon Set #1", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette", image:"images/crayon.jpg"},
+            {id: 5, name: "A4 Drawing Book #1", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 6, name: "Water Bottle (Kids) #1", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 7, name: "Kids School Bag #1", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 8, name: "Geometry Box #1", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 9, name: "Coloring Book #1", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 10, name: "Pencil Box #1", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 11, name: "HB Pencil #2", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 12, name: "Eraser #2", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 13, name: "Sharpener #2", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 14, name: "12-Color Crayon Set #2", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 15, name: "A4 Drawing Book #2", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 16, name: "Water Bottle (Kids) #2", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 17, name: "Kids School Bag #2", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 18, name: "Geometry Box #2", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 19, name: "Coloring Book #2", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 20, name: "Pencil Box #2", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 21, name: "HB Pencil #3", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 22, name: "Eraser #3", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 23, name: "Sharpener #3", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 24, name: "12-Color Crayon Set #3", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 25, name: "A4 Drawing Book #3", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 26, name: "Water Bottle (Kids) #3", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 27, name: "Kids School Bag #3", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 28, name: "Geometry Box #3", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 29, name: "Coloring Book #3", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 30, name: "Pencil Box #3", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 31, name: "HB Pencil #4", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 32, name: "Eraser #4", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 33, name: "Sharpener #4", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 34, name: "12-Color Crayon Set #4", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 35, name: "A4 Drawing Book #4", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 36, name: "Water Bottle (Kids) #4", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 37, name: "Kids School Bag #4", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 38, name: "Geometry Box #4", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 39, name: "Coloring Book #4", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 40, name: "Pencil Box #4", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 41, name: "HB Pencil #5", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 42, name: "Eraser #5", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 43, name: "Sharpener #5", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 44, name: "12-Color Crayon Set #5", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 45, name: "A4 Drawing Book #5", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 46, name: "Water Bottle (Kids) #5", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 47, name: "Kids School Bag #5", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 48, name: "Geometry Box #5", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 49, name: "Coloring Book #5", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 50, name: "Pencil Box #5", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 51, name: "HB Pencil #6", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 52, name: "Eraser #6", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 53, name: "Sharpener #6", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 54, name: "12-Color Crayon Set #6", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 55, name: "A4 Drawing Book #6", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 56, name: "Water Bottle (Kids) #6", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 57, name: "Kids School Bag #6", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 58, name: "Geometry Box #6", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 59, name: "Coloring Book #6", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 60, name: "Pencil Box #6", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 61, name: "HB Pencil #7", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 62, name: "Eraser #7", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 63, name: "Sharpener #7", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 64, name: "12-Color Crayon Set #7", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 65, name: "A4 Drawing Book #7", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 66, name: "Water Bottle (Kids) #7", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 67, name: "Kids School Bag #7", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 68, name: "Geometry Box #7", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 69, name: "Coloring Book #7", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 70, name: "Pencil Box #7", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 71, name: "HB Pencil #8", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 72, name: "Eraser #8", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 73, name: "Sharpener #8", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 74, name: "12-Color Crayon Set #8", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 75, name: "A4 Drawing Book #8", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 76, name: "Water Bottle (Kids) #8", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 77, name: "Kids School Bag #8", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 78, name: "Geometry Box #8", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 79, name: "Coloring Book #8", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 80, name: "Pencil Box #8", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 81, name: "HB Pencil #9", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 82, name: "Eraser #9", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 83, name: "Sharpener #9", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 84, name: "12-Color Crayon Set #9", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 85, name: "A4 Drawing Book #9", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 86, name: "Water Bottle (Kids) #9", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 87, name: "Kids School Bag #9", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 88, name: "Geometry Box #9", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 89, name: "Coloring Book #9", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 90, name: "Pencil Box #9", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 91, name: "HB Pencil #10", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 92, name: "Eraser #10", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 93, name: "Sharpener #10", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 94, name: "12-Color Crayon Set #10", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 95, name: "A4 Drawing Book #10", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 96, name: "Water Bottle (Kids) #10", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 97, name: "Kids School Bag #10", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 98, name: "Geometry Box #10", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 99, name: "Coloring Book #10", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 100, name: "Pencil Box #10", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 101, name: "HB Pencil #11", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 102, name: "Eraser #11", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 103, name: "Sharpener #11", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 104, name: "12-Color Crayon Set #11", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 105, name: "A4 Drawing Book #11", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 106, name: "Water Bottle (Kids) #11", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 107, name: "Kids School Bag #11", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 108, name: "Geometry Box #11", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 109, name: "Coloring Book #11", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 110, name: "Pencil Box #11", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 111, name: "HB Pencil #12", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 112, name: "Eraser #12", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 113, name: "Sharpener #12", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 114, name: "12-Color Crayon Set #12", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 115, name: "A4 Drawing Book #12", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 116, name: "Water Bottle (Kids) #12", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 117, name: "Kids School Bag #12", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 118, name: "Geometry Box #12", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 119, name: "Coloring Book #12", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 120, name: "Pencil Box #12", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 121, name: "HB Pencil #13", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 122, name: "Eraser #13", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 123, name: "Sharpener #13", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 124, name: "12-Color Crayon Set #13", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 125, name: "A4 Drawing Book #13", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 126, name: "Water Bottle (Kids) #13", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 127, name: "Kids School Bag #13", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 128, name: "Geometry Box #13", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 129, name: "Coloring Book #13", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 130, name: "Pencil Box #13", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 131, name: "HB Pencil #14", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 132, name: "Eraser #14", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 133, name: "Sharpener #14", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 134, name: "12-Color Crayon Set #14", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 135, name: "A4 Drawing Book #14", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 136, name: "Water Bottle (Kids) #14", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 137, name: "Kids School Bag #14", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 138, name: "Geometry Box #14", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 139, name: "Coloring Book #14", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 140, name: "Pencil Box #14", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 141, name: "HB Pencil #15", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 142, name: "Eraser #15", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 143, name: "Sharpener #15", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 144, name: "12-Color Crayon Set #15", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 145, name: "A4 Drawing Book #15", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 146, name: "Water Bottle (Kids) #15", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 147, name: "Kids School Bag #15", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 148, name: "Geometry Box #15", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 149, name: "Coloring Book #15", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 150, name: "Pencil Box #15", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 151, name: "HB Pencil #16", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 152, name: "Eraser #16", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 153, name: "Sharpener #16", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 154, name: "12-Color Crayon Set #16", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 155, name: "A4 Drawing Book #16", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 156, name: "Water Bottle (Kids) #16", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 157, name: "Kids School Bag #16", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 158, name: "Geometry Box #16", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 159, name: "Coloring Book #16", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 160, name: "Pencil Box #16", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 161, name: "HB Pencil #17", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 162, name: "Eraser #17", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 163, name: "Sharpener #17", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 164, name: "12-Color Crayon Set #17", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 165, name: "A4 Drawing Book #17", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 166, name: "Water Bottle (Kids) #17", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 167, name: "Kids School Bag #17", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 168, name: "Geometry Box #17", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 169, name: "Coloring Book #17", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 170, name: "Pencil Box #17", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 171, name: "HB Pencil #18", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 172, name: "Eraser #18", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 173, name: "Sharpener #18", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 174, name: "12-Color Crayon Set #18", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 175, name: "A4 Drawing Book #18", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 176, name: "Water Bottle (Kids) #18", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 177, name: "Kids School Bag #18", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 178, name: "Geometry Box #18", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 179, name: "Coloring Book #18", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 180, name: "Pencil Box #18", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 181, name: "HB Pencil #19", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 182, name: "Eraser #19", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 183, name: "Sharpener #19", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 184, name: "12-Color Crayon Set #19", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 185, name: "A4 Drawing Book #19", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 186, name: "Water Bottle (Kids) #19", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 187, name: "Kids School Bag #19", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 188, name: "Geometry Box #19", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 189, name: "Coloring Book #19", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 190, name: "Pencil Box #19", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"},
+            {id: 191, name: "HB Pencil #20", category: "Writing", price: 6, description: "HB grade, wooden body, pack of 10", icon: "pencil-alt"},
+            {id: 192, name: "Eraser #20", category: "Correction", price: 4, description: "Soft rubber, dust-free", icon: "eraser"},
+            {id: 193, name: "Sharpener #20", category: "Accessory", price: 6, description: "Single blade, plastic body", icon: "cut"},
+            {id: 194, name: "12-Color Crayon Set #20", category: "Art", price: 25, description: "Non-toxic, oil-based colors", icon: "palette"},
+            {id: 195, name: "A4 Drawing Book #20", category: "Paper", price: 45, description: "40 pages, white drawing sheets", icon: "book"},
+            {id: 196, name: "Water Bottle (Kids) #20", category: "Accessory", price: 85, description: "Plastic, cartoon print, 500ml", icon: "wine-bottle"},
+            {id: 197, name: "Kids School Bag #20", category: "Bag", price: 300, description: "3 compartments, soft padded, cartoon themed", icon: "briefcase"},
+            {id: 198, name: "Geometry Box #20", category: "Math", price: 65, description: "Compass, scale, protractor, divider", icon: "ruler-combined"},
+            {id: 199, name: "Coloring Book #20", category: "Art", price: 50, description: "20 activity pages, for age 4-10", icon: "book-open"},
+            {id: 200, name: "Pencil Box #20", category: "Accessory", price: 55, description: "Double compartment, magnetic lock", icon: "box-open"}
+        ];
+
+        // DOM elements
+   const itemsPerPage = 10;
+let currentPage = 1;
+
+const productsGrid = document.getElementById('productsGrid');
+const searchInput = document.getElementById('searchInput');
+const categoryFilter = document.getElementById('categoryFilter');
+const sortBy = document.getElementById('sortBy');
+const pagination = document.getElementById('pagination');
+
+function generateProductCards(productsToDisplay) {
+    productsGrid.innerHTML = '';
+
+    if (productsToDisplay.length === 0) {
+        productsGrid.innerHTML = '<div class="no-results">No products found matching your criteria.</div>';
+        return;
+    }
+
+productsToDisplay.forEach(product => {
+    console.log(product.name, product.image);  // Check this in console
+
+   const imagePath = product.image && product.image !== "" ? product.image : "images/default.jpeg";
+
+    const card = document.createElement('div');
+    card.className = 'product-card';
+    card.innerHTML = `
+        <div class="product-image">
+            <img src="${imagePath}" alt="${product.name}" />
+
+        </div>
+        <div class="product-info">
+            <h3>${product.name}</h3>
+            <span class="category">${product.category}</span>
+            <p class="description">${product.description}</p>
+            <div class="price-container">
+                <div class="online-price">₹${product.price.toFixed(2)}</div>
+            </div>
+            <div class="product-actions">
+                <a href="#" class="btn">Add to Cart</a>
+                <a href="product_detail_page.html?id=${product.id}" class="btn btn-outline">Details</a>
+            </div>
+        </div>
+    `;
+    productsGrid.appendChild(card);
+});
+
+}
+
+function renderPagination(totalItems, filtered) {
+    const totalPages = Math.ceil(totalItems / itemsPerPage);
+    pagination.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+        const btn = document.createElement('button');
+        btn.textContent = i;
+        btn.className = i === currentPage ? 'active' : '';
+        btn.onclick = () => {
+            currentPage = i;
+            displayProducts(filtered);
+        };
+        pagination.appendChild(btn);
+    }
+}
+
+function filterAndSortProducts() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const selectedCategory = categoryFilter.value;
+    const sortOption = sortBy.value;
+
+    let filteredProducts = products.filter(product => {
+        const matchesSearch = product.name.toLowerCase().includes(searchTerm) || product.description.toLowerCase().includes(searchTerm);
+        const matchesCategory = selectedCategory === '' || product.category === selectedCategory;
+        return matchesSearch && matchesCategory;
+    });
+
+    switch (sortOption) {
+        case 'name-asc': filteredProducts.sort((a, b) => a.name.localeCompare(b.name)); break;
+        case 'name-desc': filteredProducts.sort((a, b) => b.name.localeCompare(a.name)); break;
+        case 'price-asc': filteredProducts.sort((a, b) => a.price - b.price); break;
+        case 'price-desc': filteredProducts.sort((a, b) => b.price - a.price); break;
+    }
+
+    return filteredProducts;
+}
+
+function displayProducts(filtered) {
+    const start = (currentPage - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const currentItems = filtered.slice(start, end);
+    generateProductCards(currentItems);
+    renderPagination(filtered.length, filtered);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filtered = filterAndSortProducts();
+    displayProducts(filtered);
+});
+
+searchInput.addEventListener('input', () => {
+    currentPage = 1;
+    const filtered = filterAndSortProducts();
+    displayProducts(filtered);
+});
+
+categoryFilter.addEventListener('change', () => {
+    currentPage = 1;
+    const filtered = filterAndSortProducts();
+    displayProducts(filtered);
+});
+
+sortBy.addEventListener('change', () => {
+    currentPage = 1;
+    const filtered = filterAndSortProducts();
+    displayProducts(filtered);
+});
+</script>
+
+    
+</body>
+</html>

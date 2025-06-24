@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MogliBook - Product Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="detail_style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-book-open"></i>
+            <h1>MogliBook</h1>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="moglibook200.html">Home</a></li>
+                
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <div class="product-detail">
+            <div class="product-image">
+                <img id="product-img" src="" alt="Product Image" />
+            </div>
+            
+            <div class="product-info">
+                <div>
+                    <h1 class="product-title" id="product-name">HB Pencil #1</h1>
+                    <span class="category" id="product-category">Writing</span>
+                </div>
+                
+                <p class="description" id="product-description">
+                    HB grade, wooden body, pack of 10. Premium quality pencils for smooth writing experience. 
+                    Perfect for school, office, and art projects.
+                </p>
+                
+                <div class="price-section">
+                    <span class="price-label">Retail Price:</span>
+                    <span class="price" id="product-price">₹5.00</span>
+                    <span class="price-old" id="product-bulk-price">₹2.00</span>
+                    <span class="price-label">Online Price: <span id="product-online-price">₹6.00</span></span>
+                </div>
+                
+                <div class="product-actions">
+                    <a href="#" class="btn" id="whatsapp-btn">Buy Now via WhatsApp</a>
+                    <a href="moglibook200.html" class="btn btn-outline">Back to Products</a>
+                </div>
+                
+                <div class="specs">
+                    <h3>Product Specifications</h3>
+                    <ul id="product-specs">
+                        <li>Material: Premium wood casing</li>
+                        <li>Lead Grade: HB (Medium)</li>
+                        <li>Pack Size: 10 pencils</li>
+                        <li>Eco-friendly materials</li>
+                        <li>Smooth writing experience</li>
+                        <li>Break-resistant lead</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>MogliBook</h3>
+                <p>Premium stationery for creative minds. Quality products that inspire.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="products.html?category=Writing">Writing</a></li>
+                    <li><a href="products.html?category=Drawing">Drawing</a></li>
+                    <li><a href="products.html?category=School">School Supplies</a></li>
+                    <li><a href="products.html?category=Office">Office Supplies</a></li>
+                    <li><a href="products.html?category=Art">Art Materials</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> E-9, Kanha Park, Rau, Indore, MadhyaPradesh</li>
+                    <li><i class="fas fa-phone"></i> 9229828833</li>
+                    <li><i class="fas fa-envelope"></i> moglibook@gmail.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 MogliBook. All rights reserved.
+        </div>
+    </footer>
+    <script src="products.js"></script>
+
+    <script>
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = urlParams.get('id') || 1; // Default to product 1 if no ID
+        
+        // Sample product data (in a real app, this would come from an API)
+       
+        
+       
+        // Current product
+        const product = products[productId] || products[1];
+        
+        // Update page with product data
+        document.getElementById('product-name').textContent = product.name;
+        document.getElementById('product-category').textContent = product.category;
+        document.getElementById('product-description').textContent = product.description;
+        document.getElementById('product-price').textContent = `₹${product.retail.toFixed(2)}`;
+        document.getElementById('product-bulk-price').textContent = `₹${product.bulk.toFixed(2)}`;
+        document.getElementById('product-online-price').textContent = `₹${product.online.toFixed(2)}`;
+        const productImg = document.getElementById('product-img');
+
+         productImg.src = product.image || 'images/default.png';
+         productImg.alt = product.name;
+
+
+        
+        // Update specifications
+        const specsList = document.getElementById('product-specs');
+        specsList.innerHTML = product.specs.map(spec => `<li>${spec}</li>`).join('');
+        
+        // WhatsApp button functionality
+        const whatsappBtn = document.getElementById('whatsapp-btn');
+        whatsappBtn.href = `https://wa.me/919229828833?text=${encodeURIComponent(
+            `I want to purchase this product from MogliBook:\n\n` +
+            `*${product.name}*\n` +
+            `Price: ₹${product.retail.toFixed(2)}\n` +
+            `\nPlease confirm availability.`
+        )}`;
+    </script>
+</body>
+</html>
